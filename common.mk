@@ -119,7 +119,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
     debug.hwui.render_dirty_regions=false \
-    ro.bq.gpu_to_cpu_unsupported=1
+    ro.bq.gpu_to_cpu_unsupported=1 \
+    ro.zygote.disable_gl_preload=true
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -127,6 +128,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mobiledata.interfaces=pdp0,wlan0,gprs,ppp0 \
     ro.telephony.call_ring.multiple=false \
     ro.telephony.call_ring.delay=3000
+
+# Disable SELinux
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.boot.selinux=disabled
+
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
