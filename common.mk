@@ -40,8 +40,8 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
 
 # Bluetooth configuration files
-PRODUCT_COPY_FILES += \
-    system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
+#PRODUCT_COPY_FILES += \
+#    system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
 
 # Wifi
 PRODUCT_COPY_FILES += \
