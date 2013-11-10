@@ -6,6 +6,8 @@ on init
     export SECONDARY_STORAGE /storage/sdcard1
     mkdir /storage 0775 system system
     mkdir /storage/sdcard0 0775 system system
+    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
+    mkdir /storage/sdcard1 0700 root root
     mkdir /storage/sdcard1 0775 system system
     mkdir /storage/usbdisk0 0775 system system
     mkdir /efs 0771 radio system
@@ -36,7 +38,9 @@ on fs
 
     mkdir /data/misc/vpn/profiles 0770 system system
     mkdir /data/misc/radio 0775 radio system
-    chmod 0770 /data/misc/wifi 
+    chmod 0770 /data/misc/wifi
+
+    setprop ro.crypto.fuse_sdcard true
 
 # Restorecon
     restorecon /efs/nv_data.bin
@@ -417,3 +421,8 @@ service bugreport /system/bin/bugmailer.sh -v
     disabled
     oneshot
     keycodes 114 115 116
+
+# for fix mounts storage
+service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
+    class late_start
+    disabled
