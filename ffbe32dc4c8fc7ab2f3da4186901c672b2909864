@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ab89d9a9_54af0add",
+        "filename": "rootdir/init.smdk4210.rc",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000192
+      },
+      "writtenOn": "2013-11-11T03:40:58Z",
+      "side": 1,
+      "message": "duplicated?",
+      "revId": "ffbe32dc4c8fc7ab2f3da4186901c672b2909864",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
