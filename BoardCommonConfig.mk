@@ -172,6 +172,9 @@ BOARD_CHARGER_RES := device/samsung/galaxys2-common/res/charger
 
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/galaxys2-common/shbootimg.mk
 
+# Override healthd HAL
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.exynos4
+
 #TWRP configs
 TW_HAS_NO_RECOVERY_PARTITION := true
 
