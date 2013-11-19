@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ab89d9a9_6d98bcc3",
+        "filename": "rootdir/fstab.smdk4210",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000032
+      },
+      "writtenOn": "2013-11-19T23:08:06Z",
+      "side": 1,
+      "message": "Not everyone\u0027s external sdcards will be formatted in vfat. This is why this is left to auto.",
+      "revId": "411cc1648539c9174a36822c9ff169207c2c3a73",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ab89d9a9_8d95008d",
+        "filename": "rootdir/fstab.smdk4210",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000032
+      },
+      "writtenOn": "2013-11-19T23:08:06Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "411cc1648539c9174a36822c9ff169207c2c3a73",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
