@@ -1,2 +1,5 @@
+# Support asec containers getting mounted
+allow file_type rootfs:filesystem associate;
+
 type radio_efs_file, fs_type;
 type firmware_mfc, file_type;
