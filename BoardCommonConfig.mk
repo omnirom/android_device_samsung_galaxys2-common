@@ -146,6 +146,7 @@ BOARD_SEPOLICY_UNION := \
     drmserver.te \
     ueventd.te \
     domain.te \
+    installd.te \
     file.te \
     file_contexts \
     rild.te \
