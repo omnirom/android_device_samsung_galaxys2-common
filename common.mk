@@ -128,11 +128,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.call_ring.multiple=false \
     ro.telephony.call_ring.delay=3000
 
-# Disable SELinux
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.boot.selinux=disabled
-
-
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     static_busybox \
