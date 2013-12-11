@@ -4,7 +4,7 @@ import init.gps.rc
 on init
     export EXTERNAL_STORAGE /storage/sdcard0
     export SECONDARY_STORAGE /storage/sdcard1
-    mkdir /storage 0775 system system
+    mkdir /storage 0777 system system
     mkdir /storage/sdcard0 0700 root root
     mkdir /storage/sdcard1 0700 root root
     mkdir /storage/usbdisk0 0700 root root
