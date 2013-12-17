@@ -58,6 +58,10 @@ on fs
     restorecon /efs/FactoryApp/serial_no
     restorecon /efs/imei/mps_code.dat
 
+# exfat module
+    insmod /system/lib/modules/exfat_core.ko
+    insmod /system/lib/modules/exfat_fs.ko
+
 on post-fs-data
 # insmod kernel modules
     insmod /system/lib/modules/j4fs.ko
