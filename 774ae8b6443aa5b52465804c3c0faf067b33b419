@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ab62b9bd_1ecf57b5",
+        "filename": "rootdir/init.smdk4210.rc",
+        "patchSetId": 4
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2014-02-13T20:44:15Z",
+      "side": 1,
+      "message": "I\u0027m fairly positive this is wrong for this device.",
+      "revId": "774ae8b6443aa5b52465804c3c0faf067b33b419",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
