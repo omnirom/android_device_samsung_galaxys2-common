@@ -16,6 +16,24 @@
       "revId": "774ae8b6443aa5b52465804c3c0faf067b33b419",
       "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ab62b9bd_fe3623af",
+        "filename": "rootdir/init.smdk4210.rc",
+        "patchSetId": 4
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 1000174
+      },
+      "writtenOn": "2014-02-13T20:47:18Z",
+      "side": 1,
+      "message": "Yes, I have commented this before. I did it that way following base of Android sources. Chasmodo has not any bad thing there, is just a cherry pick from SlimRoms, and after read what they commented there, they are not even sure for what is it needed. Just the .xml part is needed, let me fix it.",
+      "parentUuid": "ab62b9bd_1ecf57b5",
+      "revId": "774ae8b6443aa5b52465804c3c0faf067b33b419",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
     }
   ]
 }
