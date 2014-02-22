@@ -1,7 +1,7 @@
 on boot
 # Permissions for mDNIe
     chown system media_rw /sys/class/mdnie/mdnie/mode
-    chown system media_rw /sys/class/mdnie/mdnie/outdoor
+    chown system media_rw /sys/class/mdnie/mdnie/accessibility
     chown system media_rw /sys/class/mdnie/mdnie/scenario
 
 # Set mDNIe mode and scenario

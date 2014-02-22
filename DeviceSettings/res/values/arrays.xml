@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012-2013 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="mdnie_scenario_entries">
+        <item>UI</item>
+        <item>Video</item>
+        <item>Camera</item>
+        <item>Navigation</item>
+        <item>Gallery</item>
+        <item>VT</item>
+        <item>Color tone 1</item>
+        <item>Color tone 2</item>
+        <item>Color tone 3</item>
+    </string-array>
+
+    <string-array name="mdnie_scenario_entries_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        </string-array>
+
+    <string-array name="mdnie_mode_entries">
+        <item>Dynamic</item>
+        <item>Standard (Default)</item>
+        <item>Natural</item>
+        <item>Movie</item>
+    </string-array>
+
+    <string-array name="mdnie_mode_entries_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="mdnie_accessibility_entries">
+        <item>Off (Default)</item>
+        <item>Negative</item>
+        <item>Color blind</item>
+    </string-array>
+
+    <string-array name="mdnie_accessibility_entries_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2 0x0000 0x0000 0xffff 0xffff 0x0000 0xffff 0x0000 0xffff 0x00ff</item>
+    </string-array>
+
+    <string-array name="gamma_mode_entries">
+        <item>2.2 (Default)</item>
+        <item>1.9</item>
+    </string-array>
+
+    <string-array name="gamma_mode_entries_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+</resources>
