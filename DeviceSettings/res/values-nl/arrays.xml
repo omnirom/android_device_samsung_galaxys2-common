@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="mdnie_scenario_entries">
+        <item>Uiterlijk (standaard)</item>
+        <item>Video</item>
+        <item>Camera</item>
+        <item>Navigatie</item>
+        <item>Galerij</item>
+        <item>VT</item>
+        <item>Kleurtoon 1</item>
+        <item>Kleurtoon 2</item>
+        <item>Kleurtoon 3</item>
+    </string-array>
+
+    <string-array name="mdnie_mode_entries">
+        <item>Dynamisch</item>
+        <item>Standaard</item>
+        <item>Natuurlijk</item>
+        <item>Film</item>
+    </string-array>
+
+    <string-array name="mdnie_accessibility_entries">
+        <item>Uit (standaard)</item>
+        <item>Negatief</item>
+        <item>Kleurenblind</item>
+    </string-array>
+
+    <string-array name="gamma_mode_entries">
+        <item>2,2 (standaard)</item>
+        <item>1,9</item>
+    </string-array>
+</resources>
