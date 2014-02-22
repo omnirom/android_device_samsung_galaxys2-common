@@ -62,7 +62,8 @@ PRODUCT_COPY_FILES += \
 # Packages
 PRODUCT_PACKAGES := \
     com.android.future.usb.accessory \
-    OmniTorch
+    OmniTorch \
+    DeviceSettings
 
 # Audio Packages
 PRODUCT_PACKAGES += \
