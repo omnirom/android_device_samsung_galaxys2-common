@@ -177,6 +177,10 @@ BOARD_HAL_STATIC_LIBRARIES := libhealthd.exynos4
 
 #TWRP configs
 TW_HAS_NO_RECOVERY_PARTITION := true
+TW_NO_REBOOT_BOOTLOADER := true
+TW_HAS_DOWNLOAD_MODE := true
+TW_MAX_BRIGHTNESS := 255
+TW_FLASH_FROM_STORAGE := true
 
 # Use the non-open-source parts, if they're present
 -include vendor/samsung/galaxys2-common/BoardConfigVendor.mk
