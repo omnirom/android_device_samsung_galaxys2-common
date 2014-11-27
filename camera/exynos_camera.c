@@ -108,7 +108,8 @@ struct exynos_camera_preset exynos_camera_presets_galaxys2[] = {
 			.whitebalance_values = "auto,incandescent,fluorescent,daylight,cloudy-daylight",
 
 			.scene_mode = "auto",
-			.scene_mode_values = "auto,portrait,landscape,night,beach,snow,sunset,fireworks,sports,party,candlelight,dusk-dawn,fall-color,back-light,text",
+
+			.scene_mode_values = "auto,portrait,landscape,night,beach,snow,sunset,fireworks,action,party,candlelight,dusk-dawn,fall-color,back-light,text",
 
 			.effect = "none",
 			.effect_values = "none,mono,negative,sepia,aqua",
@@ -153,7 +154,7 @@ struct exynos_camera_preset exynos_camera_presets_galaxys2[] = {
 			.full_video_snap_supported = 0,
 
 			.recording_size = "640x480",
-			.recording_size_values = "640x480",
+			.recording_size_values = "720x480,640x480",
 			.recording_format = "yuv420sp",
 
 			.focus_mode = "fixed",
@@ -601,10 +602,14 @@ int exynos_camera_params_apply(struct exynos_camera *exynos_camera)
 	if (picture_size_string != NULL) {
 		sscanf(picture_size_string, "%dx%d", &picture_width, &picture_height);
 
-		if (picture_width != 0 && picture_width != exynos_camera->picture_width)
+		if (picture_width != 0 && picture_width != exynos_camera->picture_width) {
 			exynos_camera->picture_width = picture_width;
-		if (picture_height != 0 && picture_height != exynos_camera->picture_height)
+		}
+
+		if (picture_height != 0 && picture_height != exynos_camera->picture_height) {
 			exynos_camera->picture_height = picture_height;
+		}
+
 	}
 
 	picture_format_string = exynos_param_string_get(exynos_camera, "picture-format");
@@ -871,6 +876,8 @@ int exynos_camera_params_apply(struct exynos_camera *exynos_camera)
 	if (scene_mode_string != NULL) {
 		if (strcmp(scene_mode_string, "auto") == 0)
 			scene_mode = SCENE_MODE_NONE;
+		else if (strcmp(scene_mode_string, "action") == 0)
+			scene_mode = SCENE_MODE_SPORTS;
 		else if (strcmp(scene_mode_string, "portrait") == 0)
 			scene_mode = SCENE_MODE_PORTRAIT;
 		else if (strcmp(scene_mode_string, "landscape") == 0)
@@ -885,7 +892,7 @@ int exynos_camera_params_apply(struct exynos_camera *exynos_camera)
 			scene_mode = SCENE_MODE_SUNSET;
 		else if (strcmp(scene_mode_string, "fireworks") == 0)
 			scene_mode = SCENE_MODE_FIREWORKS;
-		else if (strcmp(scene_mode_string, "sports") == 0)
+		else if (strcmp(scene_mode_string, "action") == 0)
 			scene_mode = SCENE_MODE_SPORTS;
 		else if (strcmp(scene_mode_string, "party") == 0)
 			scene_mode = SCENE_MODE_PARTY_INDOOR;
@@ -1582,7 +1589,7 @@ void exynos_camera_picture_stop(struct exynos_camera *exynos_camera)
 	pthread_mutex_unlock(&exynos_camera->picture_mutex);
 
 	// Wait for the thread to end
-	for (i = 0; i < 10; i++) {
+	for (i = 0 ; i < 10; i++) {
 		if (!exynos_camera->picture_thread_running)
 			break;
 
@@ -1629,7 +1636,7 @@ void *exynos_camera_auto_focus_thread(void *data)
 		}
 
 		if (auto_focus_status & M5MO_AF_STATUS_IN_PROGRESS) { // Progress
-			usleep(10000); // Sleep 10 ms
+			usleep(10000);
 		} else if (auto_focus_status == M5MO_AF_STATUS_SUCCESS || auto_focus_status == M5MO_AF_STATUS_1ST_SUCCESS) { // Success
 			auto_focus_result = 1;
 			pthread_mutex_unlock(&exynos_camera->auto_focus_mutex);
@@ -1714,7 +1721,7 @@ void exynos_camera_auto_focus_stop(struct exynos_camera *exynos_camera)
 	pthread_mutex_unlock(&exynos_camera->auto_focus_mutex);
 
 	// Wait for the thread to end
-	for (i = 0; i < 10; i++) {
+	for (i = 0 ; i < 10; i++) {
 		if (!exynos_camera->auto_focus_thread_running)
 			break;
 
@@ -2203,7 +2210,7 @@ int exynos_camera_recording_start(struct exynos_camera *exynos_camera)
 	exynos_camera->recording_buffers_count = rc;
 	ALOGD("Found %d recording buffers available!", exynos_camera->recording_buffers_count);
 
-	for (i = 0; i < exynos_camera->recording_buffers_count; i++) {
+	for (i = 0 ; i < exynos_camera->recording_buffers_count; i++) {
 		rc = exynos_v4l2_querybuf_cap(exynos_camera, 2, i);
 		if (rc < 0) {
 			ALOGE("%s: querybuf failed!", __func__);
@@ -2338,7 +2345,7 @@ int exynos_camera_set_preview_window(struct camera_device *dev,
 	if (w->set_buffer_count == NULL || w->set_usage == NULL || w->set_buffers_geometry == NULL)
 		return -EINVAL;
 
-        if (exynos_camera->preview_width == 640 || exynos_camera->preview_buffers_count <= 0) {
+		if (exynos_camera->preview_width == 640 || exynos_camera->preview_buffers_count <= 0) {
 		ALOGE("%s: Invalid preview buffers count", __func__);
 		exynos_camera->preview_buffers_count = EXYNOS_CAMERA_MAX_BUFFERS_COUNT;
 	}
@@ -2639,6 +2646,14 @@ int exynos_camera_set_parameters(struct camera_device *dev,
 		ALOGE("%s: Unable to set params string", __func__);
 		return -1;
 	}
+
+	char *recording_hint_string = exynos_param_string_get(exynos_camera, "recording-hint");
+	int cam_mode = 0; // photo
+	if (recording_hint_string != NULL && strcmp(recording_hint_string, "true") == 0) {
+		cam_mode = 1; // video
+	}
+
+	exynos_param_int_set(exynos_camera, "cam_mode", cam_mode);
 
 	rc = exynos_camera_params_apply(exynos_camera);
 	if (rc < 0) {

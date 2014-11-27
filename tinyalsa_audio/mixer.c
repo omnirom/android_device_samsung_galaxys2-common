@@ -276,12 +276,9 @@ void tinyalsa_mixer_config_start(void *data, const XML_Char *elem,
 						config_data->io_props.channel_mask = AUDIO_CHANNEL_OUT_STEREO;
 						break;
 					case 4:
-						config_data->io_props.channel_mask = AUDIO_CHANNEL_OUT_SURROUND;
-						break;
-					case 6:
 						config_data->io_props.channel_mask = AUDIO_CHANNEL_OUT_5POINT1;
 						break;
-					case 8:
+					case 6:
 						config_data->io_props.channel_mask = AUDIO_CHANNEL_OUT_7POINT1;
 						break;
 					default:
