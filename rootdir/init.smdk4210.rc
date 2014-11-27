@@ -340,7 +340,7 @@ service cpboot-daemon /sbin/cbd -d -p 8
     group radio cache inet misc audio sdcard_rw log sdcard_r
 
 service mdnsd /system/bin/mdnsd
-	class main
+    class main
     user mdnsr
     group inet net_raw
     socket mdnsd stream 0660 mdnsr inet
