@@ -98,8 +98,8 @@ BOARD_USE_TINYALSA_AUDIO := true
 BOARD_USE_YAMAHA_MC1N2_AUDIO := true
 
 # RIL
-BOARD_PROVIDES_LIBRIL := true
-BOARD_MODEM_TYPE := xmm6260
+# BOARD_PROVIDES_LIBRIL := true
+# BOARD_MODEM_TYPE := xmm6260
 
 # Camera
 BOARD_USES_PROPRIETARY_LIBFIMC := true
@@ -163,7 +163,7 @@ TARGET_RECOVERY_FSTAB := device/samsung/galaxys2-common/rootdir/fstab.smdk4210
 RECOVERY_FSTAB_VERSION := 2
 
 # Device specific headers
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/galaxys2-common/include
+# TARGET_SPECIFIC_HEADER_PATH := device/samsung/galaxys2-common/include
 
 # Charging mode
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
