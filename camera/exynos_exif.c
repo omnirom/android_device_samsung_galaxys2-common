@@ -262,9 +262,9 @@ int exynos_exif_attributes_create_params(struct exynos_camera *exynos_camera,
 	/* the exposure_time value read from the camera doesn't work
 	 * exposure_time = shutter_speed;
 	 * rc = exynos_v4l2_g_ctrl(exynos_camera, 0, V4L2_CID_CAMERA_EXIF_EXPTIME,
-	 * 	&exposure_time);
+	 *	 &exposure_time);
 	 * if (rc < 0)
-	 *	ALOGE("%s: g ctrl failed!", __func__);
+	 *	 ALOGE("%s: g ctrl failed!", __func__);
 	 */
 
 	// calculate exposure time from the shutter speed value instead
