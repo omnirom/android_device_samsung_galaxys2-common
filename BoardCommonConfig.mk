@@ -165,6 +165,9 @@ RECOVERY_FSTAB_VERSION := 2
 # Device specific headers
 # TARGET_SPECIFIC_HEADER_PATH := device/samsung/galaxys2-common/include
 
+# Include path
+TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
+
 # Charging mode
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 BOARD_BATTERY_DEVICE_NAME := "battery"
