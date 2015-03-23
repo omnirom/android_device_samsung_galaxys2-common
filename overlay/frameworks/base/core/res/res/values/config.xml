@@ -149,6 +149,9 @@
         <item>10</item>
     </integer-array>
 
+    <!-- Is the device LTE capable -->
+    <bool name="config_lte_capable">false</bool>
+
     <!-- The default iface on which to monitor data use -->
     <string name="config_datause_iface">pdp0</string>
     
@@ -158,6 +161,13 @@
     <!-- Boolean to enable stk functionality on Samsung phones -->
     <bool name="config_samsung_stk">true</bool>
 
-    <!-- If this is true, key chords can be used to take a screen record on the device. -->
-    <bool name="config_enableScreenrecordChord">false</bool>
+    <!-- If this is true, key chords can be used to take a screen record on the device.
+    <bool name="config_enableScreenrecordChord">false</bool> -->
+
+    <!-- Maximum number of supported users -->
+    <integer name="config_multiuserMaximumUsers">4</integer>
+
+    <!-- Whether UI for multi user should be shown -->
+    <bool name="config_enableMultiUserUI">true</bool>
+
 </resources>

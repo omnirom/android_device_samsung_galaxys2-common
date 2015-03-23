@@ -76,12 +76,17 @@ PRODUCT_PACKAGES += \
 # HAL
 PRODUCT_PACKAGES += \
     camera.smdk4210 \
+    dhcpcd.conf \
     gralloc.exynos4 \
+    hostapd \
+    hostapd_default.conf \
     hwcomposer.exynos4 \
+    libwpa_client \
     libnetcmdiface \
     lights.exynos4 \
     libhwconverter \
     libs5pjpeg \
+    wpa_supplicant \
     libfimg \
     libsecion
 
