@@ -46,6 +46,7 @@ TARGET_BOOTLOADER_BOARD_NAME := smdk4210
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
+TARGET_NO_SEPARATE_RECOVERY := true
 
 TARGET_PROVIDES_INIT := true
 TARGET_PROVIDES_INIT_TARGET_RC := true
@@ -78,6 +79,9 @@ BOARD_EGL_NEEDS_LEGACY_FB := true
 # FIMG Acceleration
 BOARD_USES_FIMGAPI := true
 BOARD_USES_SKIA_FIMGAPI := true
+
+# Logging
+TARGET_USES_LOGD := false
 
 # Enable WEBGL in WebKit
 ENABLE_WEBGL := true
@@ -172,6 +176,7 @@ BOARD_CHARGER_RES := device/samsung/galaxys2-common/res/charger
 
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/galaxys2-common/shbootimg.mk
 
+BOARD_USES_LEGACY_MMAP := true
 # Override healthd HAL
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.exynos4
 
