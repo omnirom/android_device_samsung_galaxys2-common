@@ -20,7 +20,7 @@
 #include <stdbool.h>
 #include <pthread.h>
 
-#include <videodev2.h>
+//#include <videodev2.h>
 #include <videodev2_exynos_media.h>
 #include <videodev2_exynos_camera.h>
 
